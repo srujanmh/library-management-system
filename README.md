@@ -1,64 +1,53 @@
-# Full Stack Library Management System
+# Library Management System
 
-A production-ready full-stack Library Management System built with the MERN stack (MongoDB, Express, React, Node.js) and TailwindCSS.
+A full-stack Library Management System with AI-powered chatbot, real-time seat booking, and Instagram-style user profiles.
+
+## Tech Stack
+- **Frontend:** React 19 + Vite + TailwindCSS
+- **Backend:** Node.js + Express 5
+- **Database:** MongoDB Atlas
+- **AI:** Google Gemini API
 
 ## Features
+- 📚 Book management (CRUD, search, borrow/return)
+- 👤 User profiles with photo upload
+- 💬 AI-powered chatbot (Gemini)
+- 💺 Seat booking system
+- 📊 Admin dashboard with analytics
+- 🔐 JWT authentication & role-based access
 
-**Admin Role**:
-- Dashboard with Analytics (Charts via `react-chartjs-2`)
-- Manage Books (Create, Read, Update, Delete)
-- Manage Issues (Issue books to users, Process Returns)
+## Local Development
 
-**Student Role**:
-- Gamified Dashboard tracking Reading Points and Badges
-- Voice-enabled Book Search (Web Speech API)
-- Seat Booking system (prevents double bookings)
-- Reading Progress and Borrowing History track
-
-**Globally Available**:
-- AI Chatbot Librarian answering queries
-
-## Prerequisites
-- Node.js (v18+)
-- MongoDB (Running locally on the default port or adjust `/backend/.env` MONGO_URI)
-
-## Setup Instructions
-
-### 1. Database & Backend Setup
-
-Navigate to the backend directory and install dependencies:
+### Backend
 ```bash
 cd backend
 npm install
+# Create .env with: MONGO_URI, JWT_SECRET, GEMINI_API_KEY
+node server.js
 ```
 
-Seed the database with example users, books, and issue records:
-```bash
-# Ensure MongoDB is running first
-node seed.js
-```
-
-Start the backend server on `http://localhost:5000`:
-```bash
-npm start
-```
-
-### 2. Frontend Setup
-
-In a new terminal, navigate to the frontend directory:
+### Frontend
 ```bash
 cd frontend
 npm install
-```
-
-Start the React application using Vite:
-```bash
 npm run dev
 ```
 
-The application will be available at `http://localhost:3000`.
+## Deployment (Render)
 
-## Example Logins Generated via Seed
-- **Admin**: `admin@library.com` / `admin123`
-- **Student 1**: `john@example.com` / `student123`
-- **Student 2**: `jane@example.com` / `student123`
+### Backend (Web Service)
+- **Root Directory:** `backend`
+- **Build:** `npm install`
+- **Start:** `npm start`
+- **Env vars:** `MONGO_URI`, `JWT_SECRET`, `GEMINI_API_KEY`
+
+### Frontend (Static Site)
+- **Root Directory:** `frontend`
+- **Build:** `npm install && npm run build`
+- **Publish Directory:** `dist`
+- **Env var:** `VITE_API_URL=https://your-backend.onrender.com/api`
+- **Rewrite Rule:** `/* → /index.html`
+
+## Default Login
+- **Admin:** admin@library.com / admin123
+- **Student:** john@example.com / student123
